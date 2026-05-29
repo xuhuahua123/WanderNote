@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+config.yaml
+config.local.yaml
+*.local
+
+# Logs
+*.log
+logs/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Java / backend
+target/
+*.class
+*.jar
+*.war
+
+# Python / Photo-Agent
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Local databases and generated assets
+*.sqlite
+*.sqlite3
+*.db
+data/
+tmp/
+temp/
+generated/
+thumbs/
+previews/
+
+# IDE
+.idea/
+.vscode/
+
