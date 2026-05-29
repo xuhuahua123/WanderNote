@@ -50,3 +50,7 @@ previews/
 .idea/
 .vscode/
 
+#agnet file
+agent.md
+AGENT.md
+

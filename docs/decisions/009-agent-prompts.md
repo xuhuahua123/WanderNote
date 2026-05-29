@@ -23,10 +23,10 @@
 为退休自驾旅行用户做一个手机端旅行公众号写作助手。用户可以按路线、城市、地点组织旅行照片，选择照片后用 AI 生成公众号游记。
 
 请先阅读这些文档：
-- docs/decisions/001-frontend-mvp.md
-- docs/decisions/005-api-contract.md
-- docs/decisions/007-project-architecture.md
-- docs/decisions/008-mvp-roadmap.md
+- ../docs/decisions/001-frontend-mvp.md
+- ../docs/decisions/005-api-contract.md
+- ../docs/decisions/007-project-architecture.md
+- ../docs/decisions/008-mvp-roadmap.md
 
 你的职责：
 - 创建/维护 frontend/ 工程
@@ -82,12 +82,12 @@
 连接 H5 前端、Photo-Agent、腾讯地图、腾讯 COS 和 MiMo-V2.5，实现旅行照片索引、路线管理、地点照片匹配、AI 游记生成。
 
 请先阅读这些文档：
-- docs/decisions/003-backend-data-model.md
-- docs/decisions/004-ai-writing-service.md
-- docs/decisions/005-api-contract.md
-- docs/decisions/006-external-services-and-secrets.md
-- docs/decisions/007-project-architecture.md
-- docs/decisions/008-mvp-roadmap.md
+- ../docs/decisions/003-backend-data-model.md
+- ../docs/decisions/004-ai-writing-service.md
+- ../docs/decisions/005-api-contract.md
+- ../docs/decisions/006-external-services-and-secrets.md
+- ../docs/decisions/007-project-architecture.md
+- ../docs/decisions/008-mvp-roadmap.md
 
 你的职责：
 - 创建/维护 backend/ 工程
@@ -151,11 +151,11 @@
 把家庭电脑本地照片同步成云端可用的照片索引和 COS 图片资源。Photo-Agent 不管路线、不管文章，只做稳定照片同步。
 
 请先阅读这些文档：
-- docs/decisions/002-photo-agent.md
-- docs/decisions/005-api-contract.md
-- docs/decisions/006-external-services-and-secrets.md
-- docs/decisions/007-project-architecture.md
-- docs/decisions/008-mvp-roadmap.md
+- ../docs/decisions/002-photo-agent.md
+- ../docs/decisions/005-api-contract.md
+- ../docs/decisions/006-external-services-and-secrets.md
+- ../docs/decisions/007-project-architecture.md
+- ../docs/decisions/008-mvp-roadmap.md
 
 你的职责：
 - 创建/维护 photo-agent/ 工程
