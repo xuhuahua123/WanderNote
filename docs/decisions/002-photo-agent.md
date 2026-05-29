@@ -132,6 +132,33 @@ thumb 和 preview 都上传到腾讯 COS。
 
 Photo-Agent 不保存 COS 密钥，只使用后端下发的临时上传 URL。
 
+图片格式：
+
+```text
+thumb：WebP
+preview：WebP
+```
+
+HEIC 处理规则：
+
+- HEIC 原图保持本地不动。
+- 不修改 HEIC 原图。
+- 不上传 HEIC 原图。
+- 只基于 HEIC 生成 WebP thumb 和 WebP preview。
+
+本地派生图存储路径：
+
+```text
+{photo_root}/.wandernote/thumbs/
+{photo_root}/.wandernote/previews/
+```
+
+说明：
+
+- `.wandernote` 目录用于存放 Agent 生成的本地派生文件。
+- 不把 thumb / preview 混放到原图目录中。
+- Photo-Agent 扫描照片时必须忽略 `.wandernote` 目录。
+
 ## 上传策略
 
 Agent 主动连接云端，不开放本地端口。
@@ -190,6 +217,38 @@ MVP 不做实时文件监听。
 - macOS / Windows 文件监听细节较多。
 - 第一版优先稳定可靠。
 - 10 分钟增量扫描已经能满足家庭旅行照片同步场景。
+
+## 本地标识和版本
+
+`local_photo_id` 生成规则：
+
+```text
+SHA256(relative_path + str(file_size) + str(mtime))
+```
+
+要求：
+
+- `relative_path` 使用相对照片根目录的路径。
+- `relative_path` 统一使用正斜杠 `/` 作为路径分隔符。
+- 不使用系统相关路径分隔符作为 hash 输入。
+- `file_size` 使用字节数。
+- `mtime` 使用文件修改时间戳。
+
+`content_hash` 字段保留，但 MVP 默认不计算全量文件内容 hash。
+
+如果后续需要真实内容 hash，使用 SHA256，不使用 MD5。
+
+Agent 版本号定义在：
+
+```text
+agent/__init__.py
+```
+
+初始版本：
+
+```text
+0.1.0
+```
 
 ## 心跳机制
 
