@@ -8,6 +8,7 @@ Photo-Agent 入口点
 - 启动同步流程
 """
 
+import asyncio
 import logging
 import signal
 import sys
